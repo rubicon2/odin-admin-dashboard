@@ -1,0 +1,156 @@
+@font-face {
+    font-family: Roboto;
+    src: url("fonts/roboto/Roboto-Medium.ttf");
+}
+
+:root {
+    box-sizing: border-box;
+    font-family: Roboto, system-ui;
+    font-size: 18px;
+    --bgc-grey: #cbd5e1;
+    --bgc-blue: #0ea5e9;
+    --bgc-yellow: #eab308;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    /* border: 1px dotted red; */
+}
+
+body, 
+p, 
+ul, ol,
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template: 180px 1fr / 300px 1fr 315px;
+}
+
+.dash-nav {
+    /*
+    Redo nav so icons are all in alignment with each other!
+    And the text all starts from the same place too. Grid it. 
+    But how to get those gaps between Dashboard then Home, and between Communities and Settings?
+    */
+    grid-area: 1 / 1 / 3 / 2;
+    background-color: var(--bgc-blue, blue);
+    color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.dash-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+}
+
+.nav-item {
+    display: grid;
+    grid-template: min-content / 50px 1fr;
+    align-items: center;
+    gap: 0 10px;
+}
+
+.nav-heading {
+    margin-bottom: 30px;
+}
+
+.nav-settings {
+    margin-top: 50px;
+}
+
+.nav-item > img {
+    justify-self: center;
+}
+
+.dash-header {
+    grid-area: 1 / 2 / 2 / 4;
+    background-color: white;
+    padding: 0 45px;
+    display: grid;
+    grid-template-rows: 1fr 1.5fr;
+    box-shadow: 0 -10px 30px 5px rgba(0, 0, 0, 0.362);
+}
+
+.dash-header > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+    padding-right: 25px;
+}
+
+.dash-header > div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+}
+
+.user-handle {
+    margin-right: auto;
+}
+
+.header-button {
+    background-color: var(--bgc-blue, blue);
+    color: white;
+    /* padding: 12px 30px; */
+    width: 100px;
+    height: 40px;
+    border-radius: 50px;
+    font-family: Roboto, system-ui;
+    font-size: 16px;
+    border: none;
+}
+
+#search {
+    flex: 1;
+    margin-right: 100px;
+    background-color: var(--bgc-grey, grey);
+    border-radius: 50px;
+    padding: 7px;
+    border: none;
+}
+
+.profile-photo-main,
+.profile-photo-mini {
+    border-radius: 50px;
+}
+
+.profile-photo-main {
+    width: 85px;
+    height: 85px;
+}
+
+.profile-photo-mini {
+    display: inline;
+    width: 60px;
+    height: 60px;
+}
+
+.dash-content {
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: var(--bgc-grey);
+    position: relative;
+    z-index: -1;
+}
+
+.dash-sidebar {
+    grid-area: 2 / 3 / 3 / 4;
+    background-color: var(--bgc-grey);
+    position: relative;
+    z-index: -1;
+}
+
