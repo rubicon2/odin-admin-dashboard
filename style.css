@@ -207,13 +207,16 @@ body {
 
 .news-entries {
     height: 100%;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.news-entries > * {
-    padding: 10px;
-    border-bottom: 1px solid var(--bgc-grey);
+.news-entry-border {
+    height: 1px;
+    padding: 0;
+    margin: 0;
+    background-color: var(--bgc-grey);
 }
 
 p {
@@ -228,10 +231,6 @@ p {
 
 .project-content p {
     font-size: 0.95rem;
-}
-
-.news-entries > *:last-child {
-    border: none;
 }
 
 .trending-entries {
